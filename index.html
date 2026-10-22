@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Architecture Studios — Stanzza & dsgn interior</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090a0f;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(255, 255, 255, 0.06);
+      --primary: #e6af2e;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 70px 24px;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(230, 175, 46, 0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(59, 130, 246, 0.08), transparent);
+    }
+    header {
+      text-align: center;
+      max-width: 800px;
+      margin-bottom: 54px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(230, 175, 46, 0.12);
+      color: var(--primary);
+      border: 1px solid rgba(230, 175, 46, 0.3);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+    }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(34px, 5vw, 54px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p.subtitle {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 32px;
+      max-width: 900px;
+      width: 100%;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(20px);
+    }
+    .card:hover {
+      background: var(--card-hover);
+      border-color: rgba(230, 175, 46, 0.5);
+      transform: translateY(-6px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .card-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      opacity: 0.85;
+      letter-spacing: 0.1em;
+    }
+    .status-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .card-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 24px;
+    }
+    .feature-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .feature-list li {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .feature-list li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+    .stat-val {
+      font-size: 16px;
+      font-weight: 700;
+      color: #e2e8f0;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 20px;
+      background: #ffffff;
+      color: #090a0f;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+    }
+    .btn:hover {
+      background: var(--primary);
+      color: #000;
+      box-shadow: 0 0 25px rgba(230, 175, 46, 0.45);
+    }
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">Active Studios Portfolio</div>
+    <h1>Stanzza Design & dsgn interior</h1>
+    <p class="subtitle">Complete website clones with authentic loading animation, smooth Lenis scrolling, Webflow interactions, project sliders, and media assets.</p>
+  </header>
+
+  <div class="grid">
+
+    <!-- Stanzza Design -->
+    <div class="card">
+      <div>
+        <div class="card-top">
+          <span class="card-num">STUDIO 01</span>
+          <span class="status-tag">Live • Port 8002</span>
+        </div>
+        <h2 class="card-title">Stanzza Design</h2>
+        <p class="card-desc">Composed residential interiors with full cinematic intro preloader, hero expansion, apartment showcase, and blog.</p>
+        <ul class="feature-list">
+          <li>Authentic GSAP wave preloader animation</li>
+          <li>Smooth hero expansion (4svw → 42svw → 100svw)</li>
+          <li>Full apartment project sliders & case studies</li>
+          <li>Webflow interactions & Lenis smooth scroll</li>
+        </ul>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-label">Pages Cloned</span>
+            <span class="stat-val">18 Pages</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Assets Saved</span>
+            <span class="stat-val">360 Files (37 MB)</span>
+          </div>
+        </div>
+      </div>
+      <a href="http://localhost:8002/" class="btn">
+        Open Stanzza Design <span>→</span>
+      </a>
+    </div>
+
+    <!-- dsgn interior -->
+    <div class="card">
+      <div>
+        <div class="card-top">
+          <span class="card-num">STUDIO 02</span>
+          <span class="status-tag">Live • Port 8004</span>
+        </div>
+        <h2 class="card-title">dsgn interior</h2>
+        <p class="card-desc">Scandinavian interior architecture studio for offices, hotels, and public spaces in English and Swedish.</p>
+        <ul class="feature-list">
+          <li>Autoplay background video banner</li>
+          <li>High-res responsive gallery images (up to 1920w)</li>
+          <li>Complete project archives & case studies</li>
+          <li>Interactive Swiper slider navigation</li>
+        </ul>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-label">Pages Cloned</span>
+            <span class="stat-val">33 Pages</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Assets Saved</span>
+            <span class="stat-val">3,828 Files (320 MB)</span>
+          </div>
+        </div>
+      </div>
+      <a href="http://localhost:8004/" class="btn">
+        Open dsgn interior <span>→</span>
+      </a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Directory: <code>/Users/ansumanmaharana/Desktop/interior</code> • Launchpad Hub: <code>http://localhost:8080</code></p>
+  </footer>
+
+</body>
+</html>
