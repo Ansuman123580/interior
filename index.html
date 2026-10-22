@@ -195,17 +195,49 @@
       font-weight: 700;
       border-radius: 12px;
       transition: all 0.2s ease;
+      cursor: pointer;
     }
     .btn:hover {
       background: var(--primary);
       color: #000;
       box-shadow: 0 0 25px rgba(230, 175, 46, 0.45);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 13px;
+      padding: 11px 16px;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      box-shadow: none;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    .links-stack {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
     }
     footer {
       margin-top: 60px;
       text-align: center;
       font-size: 13px;
       color: #64748b;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -224,7 +256,7 @@
       <div>
         <div class="card-top">
           <span class="card-num">STUDIO 01</span>
-          <span class="status-tag">Live • Port 8002</span>
+          <span class="status-tag">Live on Vercel</span>
         </div>
         <h2 class="card-title">Stanzza Design</h2>
         <p class="card-desc">Composed residential interiors with full cinematic intro preloader, hero expansion, apartment showcase, and blog.</p>
@@ -245,9 +277,14 @@
           </div>
         </div>
       </div>
-      <a href="http://localhost:8002/" class="btn">
-        Open Stanzza Design <span>→</span>
-      </a>
+      <div class="links-stack">
+        <a href="https://stanzzadesign.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">
+          Open Stanzza Design (Live Vercel) <span>↗</span>
+        </a>
+        <a href="http://localhost:8002/" class="btn btn-secondary">
+          Open Local Mirror (Port 8002) <span>→</span>
+        </a>
+      </div>
     </div>
 
     <!-- dsgn interior -->
@@ -255,7 +292,7 @@
       <div>
         <div class="card-top">
           <span class="card-num">STUDIO 02</span>
-          <span class="status-tag">Live • Port 8004</span>
+          <span class="status-tag">Live on Vercel</span>
         </div>
         <h2 class="card-title">dsgn interior</h2>
         <p class="card-desc">Scandinavian interior architecture studio for offices, hotels, and public spaces in English and Swedish.</p>
@@ -276,15 +313,21 @@
           </div>
         </div>
       </div>
-      <a href="http://localhost:8004/" class="btn">
-        Open dsgn interior <span>→</span>
-      </a>
+      <div class="links-stack">
+        <a href="https://dsgninterior.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">
+          Open dsgn interior (Live Vercel) <span>↗</span>
+        </a>
+        <a href="http://localhost:8004/" class="btn btn-secondary">
+          Open Local Mirror (Port 8004) <span>→</span>
+        </a>
+      </div>
     </div>
 
   </div>
 
   <footer>
-    <p>Directory: <code>/Users/ansumanmaharana/Desktop/interior</code> • Launchpad Hub: <code>http://localhost:8080</code></p>
+    <p>Deployed on Vercel • Source code on GitHub: <a href="https://github.com/Ansuman123580/interior" target="_blank" rel="noopener noreferrer">Ansuman123580/interior</a></p>
+    <p>Local Launchpad Hub: <code>http://localhost:8080</code></p>
   </footer>
 
 </body>
